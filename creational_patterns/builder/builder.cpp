@@ -1,22 +1,26 @@
 #include <iostream>
 #include <string>
 
-class Wheel {
+class Wheel 
+{
 public:
     int size;
 };
 
-class Engine {
+class Engine 
+{
 public:
     int horsepower;
 };
 
-class Body {
+class Body 
+{
 public:
     std::string shape;
 };
 
-class CarModel {
+class CarModel 
+{
 public:
     Wheel* wheels[4];
     Engine* engine;
@@ -25,13 +29,14 @@ public:
     void specifications() {
         std::cout << "Body: " << body->shape << std::endl;
         std::cout << "Engine Horsepower: " << engine->horsepower << std::endl;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; ++i) {
             std::cout << "Tire " << (i + 1) << " Size: " << wheels[i]->size << std::endl;
         }
     }
 };
 
-class Builder {
+class Builder 
+{
 public:
     virtual Wheel* get_wheel() = 0;
     virtual Engine* get_engine() = 0;
@@ -39,7 +44,8 @@ public:
     virtual CarModel* get_car_model() = 0;
 };
 
-class BMWBuilder : public Builder {
+class BMWBuilder : public Builder 
+{
 public:
     Wheel* get_wheel() {
         Wheel* wheel = new Wheel();
@@ -71,7 +77,8 @@ public:
     }
 };
 
-class TeslaBuilder : public Builder {
+class TeslaBuilder : public Builder 
+{
 public:
     Wheel* get_wheel() {
         Wheel* wheel = new Wheel();
@@ -103,7 +110,8 @@ public:
     }
 };
 
-class Director {
+class Director 
+{
 public:
     void set_builder(Builder* newBuilder) {
         builder = newBuilder;
@@ -117,7 +125,8 @@ private:
     Builder* builder;
 };
 
-int main() {
+int main() 
+{
     CarModel* car_model;
     Director director;
     BMWBuilder bmw_builder;
