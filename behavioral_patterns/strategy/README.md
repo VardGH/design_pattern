@@ -1,8 +1,8 @@
-Strategy Pattern Example
+## Strategy Pattern Example
 
 The Strategy pattern defines a family of algorithms, encapsulates each one of them, and makes them interchangeable. The client can choose which algorithm to use at runtime.
 
-Components:
+## Components:
 
 Strategy (Strategy Interface):
 
