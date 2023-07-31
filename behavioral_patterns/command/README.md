@@ -5,16 +5,16 @@ The Command pattern decouples the sender of a request from the receiver, by enca
 **Components:**
 
 1. **Receiver Class:**
-   This class represents the entity that receives and processes the commands. In this example, it has two methods, `open_file` and `close_file`, which simulate opening and closing a file.
+   - This class represents the entity that receives and processes the commands. In this example, it has two methods, `open_file` and `close_file`, which simulate opening and closing a file.
 
 2. **Command Interface:**
-   The `Command` class represents the interface for all concrete command classes. It declares a single pure virtual method, `execute()`, which must be implemented by each concrete command class.
+   - The `Command` class represents the interface for all concrete command classes. It declares a single pure virtual method, `execute()`, which must be implemented by each concrete command class.
 
 3. **Concrete Command Classes:**
    - `OpenFileCommand` and `CloseFileCommand` are two concrete command classes that implement the `Command` interface. Each of these classes encapsulates a specific action (opening or closing a file) and delegates it to the receiver.
 
 4. **Invoker Class:**
-   The `Invoker` class contains a collection of command objects and has a method, `execute_commands()`, to execute the stored commands in sequence.
+   - The `Invoker` class contains a collection of command objects and has a method, `execute_commands()`, to execute the stored commands in sequence.
 
 **How to Use:**
 
